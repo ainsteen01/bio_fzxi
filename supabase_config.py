@@ -8,7 +8,7 @@ load_dotenv()
 
 # Get credentials from .env
 SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_PUBLISHABLE_KEY")  # Using publishable key, not secret key
+SUPABASE_KEY = os.getenv("SUPABASE_SERVICE_KEY")  # Using publishable key, not secret key
 
 # Validate credentials
 if not SUPABASE_URL:
@@ -18,7 +18,7 @@ if not SUPABASE_URL:
 
 if not SUPABASE_KEY:
     print("❌ SUPABASE_PUBLISHABLE_KEY not found in .env file")
-    print("Please add: SUPABASE_PUBLISHABLE_KEY=sb_publishable_...")
+    print("Please add: SUPABASE_SERVICE_KEY=sb_publishable_...")
     sys.exit(1)
 
 # Print confirmation (partial for security)
