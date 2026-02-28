@@ -9,13 +9,13 @@ load_dotenv()
 # DATABASE CONFIG
 # --------------------------------------------------
 
-SQLITE_DB_PATH = os.getenv("SQLITE_DB_PATH", "/Users/netcom/bmsupa/biodb.db")
+SQLITE_DB_PATH = os.getenv("SQLITE_DB_PATH", "/tmp/biodb.db")  # Writable path
 SQLITE_URL = f"sqlite:///{SQLITE_DB_PATH}"
 
 # ✅ IMPORTANT CHANGE: add check_same_thread=False
 engine = create_engine(
     SQLITE_URL,
-    connect_args={"check_same_thread": False},  # REQUIRED for FastAPI
+    connect_args={"check_same_thread": False},
     echo=False
 )
 
